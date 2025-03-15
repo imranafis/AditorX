@@ -289,7 +289,7 @@ export default function AditorXWebsite() {
             rel="noopener noreferrer"
             className="version-link"
           >
-            v1.4.31
+            v1.5.0
           </a>
         </div>
         <div className="menuBtn">
