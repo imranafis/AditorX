@@ -262,3 +262,127 @@ body {
     }
   }
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 5px 1rem;
+
+    .logo {
+      p {
+        font-size: 1.3rem;
+      }
+
+      .version-link {
+        font-size: 0.65rem;
+        margin-left: 0.3rem;
+        padding: 0.15rem 0.3rem;
+      }
+    }
+
+    .menuBtn {
+      gap: 15px;
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .home {
+    .playground {
+      padding: 1rem;
+      height: auto;
+      margin-bottom: 3rem;
+
+      .slogan {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .playground_Aditorx {
+        width: 95%;
+        max-width: 100%;
+        min-height: 60vh;
+        max-height: 70vh;
+        border: 6px solid #333;
+        border-radius: 8px;
+      }
+    }
+
+    .footer {
+      height: 50vh;
+      padding: 2rem 1rem;
+
+      .title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .slogan {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .docBtn {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.8rem;
+      }
+    }
+  }
+
+  .docContainer {
+    .documentation {
+      padding: 10px;
+      max-width: 95vw;
+      margin: 5px auto;
+
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 15px;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      ul {
+        margin-left: 10px;
+      }
+
+      pre {
+        font-size: 0.85rem;
+        padding: 8px;
+      }
+    }
+
+    .footer {
+      height: 20vh;
+      padding: 1rem;
+
+      p {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  }
+}
