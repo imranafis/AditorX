@@ -395,26 +395,50 @@ export default function AditorXWebsite() {
             </ul>
 
             <h2>🛆 Installation</h2>
+
             <h3>Using npm</h3>
             <pre>
               <code>npm install aditorx</code>
             </pre>
+
             <h3>Using yarn</h3>
             <pre>
               <code>yarn add aditorx</code>
             </pre>
+
             <h3>Using a CDN</h3>
+            <p>For quick testing, you can use a CDN:</p>
             <pre>
               <code>{`<script src="https://unpkg.com/aditorx"></script>`}</code>
             </pre>
 
             <h2>💻 Initialization Examples</h2>
+
             <h3>Vanilla JavaScript</h3>
             <pre>
-              <code>{`import { initializeAditorX } from "aditorx";
+              <code>{`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AditorX Example</title>
+  </head>
+  <body>
+    <div id="editor-container"></div>
+    <script type="module">
+      import { initializeAditorX } from "aditorx";
 
-const editor = document.getElementById("editor-container");
-initializeAditorX(editor, "");`}</code>
+      const editor = document.getElementById("editor-container");
+
+      // Initialize with an empty editor
+      initializeAditorX(editor, "");
+
+      // OR Initialize with previously saved data
+      // let savedData = "..."; // Retrieved from storage
+      // initializeAditorX(editor, savedData);
+    </script>
+  </body>
+</html>`}</code>
             </pre>
 
             <h3>React</h3>
@@ -424,12 +448,79 @@ import { initializeAditorX } from "aditorx";
 
 function Editor() {
   const editorRef = useRef(null);
+
   useEffect(() => {
     if (editorRef.current) {
+      // Initialize with an empty editor
       initializeAditorX(editorRef.current, "");
+
+      // OR Initialize with previously saved data
+      // let savedData = "..."; // Retrieved from storage
+      // initializeAditorX(editorRef.current, savedData);
     }
   }, []);
+
   return <div ref={editorRef} className="editor-container"></div>;
+}
+
+export default Editor;`}</code>
+            </pre>
+
+            <h3>Vue.js</h3>
+            <pre>
+              <code>{`<template>
+  <div ref="editor" class="editor-container"></div>
+</template>
+
+<script>
+import { onMounted, ref } from "vue";
+import { initializeAditorX } from "aditorx";
+
+export default {
+  setup() {
+    const editor = ref(null);
+
+    onMounted(() => {
+      // Initialize with an empty editor
+      initializeAditorX(editor.value, "");
+
+      // OR Initialize with previously saved data
+      // let savedData = "..."; // Retrieved from storage
+      // initializeAditorX(editor.value, savedData);
+    });
+
+    return { editor };
+  },
+};
+</script>`}</code>
+            </pre>
+
+            <h3>Angular</h3>
+            <h4>Template (HTML)</h4>
+            <pre>
+              <code>{`<div #editor class="editor-container"></div>`}</code>
+            </pre>
+
+            <h4>Component (TypeScript)</h4>
+            <pre>
+              <code>{`import { Component, ElementRef, ViewChild, AfterViewInit } from "@angular/core";
+import { initializeAditorX } from "aditorx";
+
+@Component({
+  selector: "app-editor",
+  templateUrl: "./editor.component.html",
+})
+export class EditorComponent implements AfterViewInit {
+  @ViewChild("editor") editor!: ElementRef;
+
+  ngAfterViewInit() {
+    // Initialize with an empty editor
+    initializeAditorX(this.editor.nativeElement, "");
+
+    // OR Initialize with previously saved data
+    // let savedData = "..."; // Retrieved from storage
+    // initializeAditorX(this.editor.nativeElement, savedData);
+  }
 }`}</code>
             </pre>
 

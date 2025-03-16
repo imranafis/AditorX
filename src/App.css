@@ -1,4 +1,30 @@
-/* styles.css */
+/* For WebKit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Dark grey scrollbar */
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Slightly darker on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
 body {
   font-family: "Hind", Arial, sans-serif;
   background-color: #f4f5f5;
@@ -207,6 +233,7 @@ body {
       font-size: 1.5rem;
       font-weight: bold;
       margin-top: 20px;
+      margin-bottom: 10px;
     }
 
     p {
@@ -226,6 +253,7 @@ body {
       border-radius: 5px;
       overflow-x: auto;
       font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
     code {
@@ -358,6 +386,7 @@ body {
       h3 {
         font-size: 1.2rem;
         margin-top: 10px;
+        margin-bottom: 5px;
       }
 
       p {
@@ -372,6 +401,7 @@ body {
       pre {
         font-size: 0.85rem;
         padding: 8px;
+        margin-bottom: 8px;
       }
     }
 
